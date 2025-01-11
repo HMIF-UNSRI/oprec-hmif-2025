@@ -5,7 +5,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-3 lg:px-10 xl:px-14">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#173142]/50 bg-[#0010143f] backdrop-blur-md z-50 px-3 lg:px-10 xl:px-14">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto lg:px-[10px]">
         <a
           href="#about-me"
@@ -25,7 +25,7 @@ const Navbar = () => {
         </a>
 
         <div className="w-[500px] mx-auto md:mx-0 h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="flex  items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] px-4  lg:px-[20px] py-[10px] rounded-full text-gray-200">
+          <div className="flex  items-center justify-between w-full h-auto border border-[#00bbe071] bg-[#0010143f] px-4  lg:px-[20px] py-[10px] rounded-full text-gray-200">
             <Link href="/" className="cursor-pointer">
               Home
             </Link>

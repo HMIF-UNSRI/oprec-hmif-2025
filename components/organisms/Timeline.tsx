@@ -14,7 +14,7 @@ import TimelineCard from "../atoms/TimelineCard";
 const Timeline = () => {
   return (
     <section>
-      <h1 className="text-[40px] lg:text-[50px] font-semibold text-center bg-clip-text bg-gradient-to-r text-transparent from-indigo-300 to-violet-700 py-10">
+      <h1 className="text-[40px] lg:text-[50px] font-semibold text-center bg-clip-text bg-gradient-to-r text-transparent from-white via-[#00BBE0] to-[#00BBE0] py-10">
         Timeline
       </h1>
       <div
@@ -27,10 +27,10 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"19/01/2024"}
+            date={"15/01/2025"}
             title={"Pembukaan Pendaftaran"}
             description={
-              "Pendaftaran dibuka pada tanggal sampai 19 - 26 Januari 2024 pukul 23:59 WIB"
+              "Pendaftaran dibuka pada tanggal sampai 15 - 20 Januari 2025 pukul 23:59 WIB"
             }
           />
         </div>
@@ -38,7 +38,7 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"27/01/2024"}
+            date={"25/01/2025"}
             title={"Wawancara"}
             description={
               "Sesi wawancara dilakukan semi-offline dan terdiri dari 2 tahap, yaitu wawancara inti dan wawancara dinas"
@@ -49,7 +49,7 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"28/01/2024"}
+            date={"26/01/2024"}
             title={"LGD"}
             description={
               "Leaderless Group Discussion dilakukan secara daring melalui media aplikasi Zoom"

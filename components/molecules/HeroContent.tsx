@@ -22,12 +22,16 @@ const HeroContent = () => {
       <div className="flex flex-col justify-center w-full h-full gap-3 m-auto lg:gap-5 text-start">
         <motion.div
           variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
+          className="Welcome-box py-[8px] px-[7px] border border-[#00bbe09c] opacity-[0.9]"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Open Recruitment HMIF UNSRI 2024
-          </h1>
+          <SparklesIcon className="text-[#DDE1E3] mr-[10px] h-5 w-5" />
+          {/* <h1 className="Welcome-text text-[13px]">
+            Open Recruitment HMIF UNSRI 2025
+          </h1> */}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00BBE0] to-[#00BBE0] text-[13px]">
+            {" "}
+            Open Recruitment HMIF UNSRI 2025{" "}
+          </span>
         </motion.div>
 
         <motion.div
@@ -36,7 +40,7 @@ const HeroContent = () => {
         >
           <span>
             HMIF
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-violet-700">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00BBE0]">
               {" "}
               OPEN{" "}
             </span>

@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
 
         <div className="my-[10px] text-[15px] text-center">
-          &copy; Dinas Akademik HMIF 2024 Inc. All rights reserved
+          &copy; Dinas Akademik HMIF 2025 Inc. All rights reserved
         </div>
       </div>
     </div>
