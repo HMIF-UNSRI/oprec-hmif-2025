@@ -1,33 +1,41 @@
 "use client";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useEffect, useState } from "react";
-
+import { doc, updateDoc } from "firebase/firestore";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { fetchCalonStaff, getCalonStaffById } from "@/lib/api";
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "@/lib/firebase";
+import { db } from "@/lib/firebase";
 import { Button } from "../ui/button";
+import {store} from "next/dist/build/output/store";
 
 export default function TableDetail() {
-  const [calonStaff, setCalonStaff] = useState<any>([]);
   const [kpmUrl, setKpmUrl] = useState("");
-
+  const [calonStaff, setCalonStaff] = useState<any>({});
+  const [accepted, setAccepted] = useState(false);
   const calonStaffId = usePathname().split("/")[3];
 
   useEffect(() => {
     const getCalonStaff = async () => {
       if (calonStaffId) {
         const response = await getCalonStaffById(calonStaffId);
-        console.log(response);
         setCalonStaff(response);
-        console.log(calonStaff);
       }
     };
     getCalonStaff();
   }, [calonStaffId]);
 
   useEffect(() => {
+    const getCalonStaff = async () => {
+      if (calonStaffId) {
+        const response = await getCalonStaffById(calonStaffId);
+        setCalonStaff(response);
+      }
+    };
+    getCalonStaff();
+
     const getCalonStaffKPM = async () => {
       if (calonStaff.nim) {
         const url = await getDownloadURL(ref(storage, `calonStaff/${calonStaff.nim}`));
@@ -45,6 +53,22 @@ export default function TableDetail() {
     };
     getCalonStaffKPM();
   }, [calonStaff]);
+
+  const handleAccept = async () => {
+    try {
+      const newStatus = !accepted ? "Diterima" : "Belum Diterima";
+      setAccepted(!accepted);
+
+      // Update Firestore
+      const docRef = doc(db, "calonStaff", calonStaffId);
+      await updateDoc(docRef, { status: newStatus });
+
+      console.log(`Status updated to: ${newStatus}`);
+    } catch (error) {
+      console.error("Error updating document: ", error);
+    }
+  };
+
   return (
     <Table className="w-full mx-auto my-5">
       <TableBody className="text-xl md:text-2xl">
@@ -167,7 +191,18 @@ export default function TableDetail() {
             <img id="myimg" className="max-w-64 max-h-64" src={kpmUrl} />
           </TableCell>
         </TableRow>
-        <Button className="rounded-lg cursor-pointer bg-emerald-600 my-7 mx-4 text-lg">Terima</Button>
+        <TableRow>
+          <TableCell></TableCell>
+          <TableCell></TableCell>
+          <TableCell colSpan={10} className="text-right pt-4">
+            <Button
+                onClick={handleAccept}
+                className={`rounded-lg cursor-pointer text-lg ${accepted ? "bg-red-600" : "bg-emerald-600"}`}
+            >
+              {accepted ? "Hapus" : "Terima"}
+            </Button>
+          </TableCell>
+        </TableRow>
       </TableBody>
     </Table>
   );
