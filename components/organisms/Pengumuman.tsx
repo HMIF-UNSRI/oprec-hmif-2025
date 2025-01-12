@@ -23,17 +23,17 @@ const Pengumuman = () => {
       <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
         <div className="flex flex-col items-center w-auto h-auto cursor-pointer group">
           <Image
-            src="/LockTop.png"
+            src="/shackle-only.svg"
             alt="Lock top"
-            width={50}
-            height={50}
-            className="w-[50px] translate-y-5 transition-all duration-200 group-hover:translate-y-11"
+            width={150}
+            height={150}
+            className="w-[50px] translate-y-20 transition-all duration-200 group-hover:translate-y-14"
           />
           <Image
-            src="/LockMain.png"
+            src="/diamond-lock.svg"
             alt="Lock Main"
-            width={70}
-            height={70}
+            width={100}
+            height={100}
             className="z-10 "
           />
         </div>

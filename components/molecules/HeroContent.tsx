@@ -82,12 +82,7 @@ const HeroContent = () => {
         variants={slideInFromRight(0.8)}
         className="flex items-center justify-center w-full h-full"
       >
-        <Image
-          src="/hero-dinas.svg"
-          alt="work icons"
-          height={600}
-          width={600}
-        />
+        <Image src="/hero-shi.svg" alt="work icons" height={600} width={600} />
       </motion.div>
     </motion.div>
   );

@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} bg-[#020a14] overflow-x-hidden`}>
+      <body className={`${poppins.className} bg-[#020a14] overflow-x-hidden`}>
         <StarsCanvas />
         {children}
         <Toaster />
