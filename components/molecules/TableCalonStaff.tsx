@@ -50,8 +50,8 @@ export default function TableCalonStaff() {
             <TableCell colSpan={14}>{staff.divisions[1]}</TableCell>
             <TableCell colSpan={14} className="">
               <Link
-                href={`/dashboard/${dinasName}/${staff.id}`}
-                className="px-5 py-1 rounded-lg cursor-pointer bg-emerald-600"
+                  href={`/dashboard/${dinasName}/${staff.id}`}
+                  className="px-5 py-1 rounded-lg cursor-pointer bg-emerald-600"
               >
                 Detail
               </Link>
