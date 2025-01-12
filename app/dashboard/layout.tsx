@@ -44,7 +44,7 @@ export default function RootDashboard({
             <p className=""> Dashboard</p>
           </Link>
           <Link
-            href={"/dashboard/pendaftar"}
+            href={"/dashboard/Pendaftar"}
             className="flex items-center justify-start gap-2 px-3 py-2 mt-5 text-xl rounded-md cursor-pointer sidebar-dashboard-item text-slate-200"
           >
             <FaUsers />
