@@ -28,6 +28,22 @@ export async function fetchCalonStaff(dinasName?: string) {
   return getAllCalonStaff();
 }
 
+export async function fetchStaffDiterima() {
+  try {
+    const calonStaffRef = collection(db, "calonStaff");
+    const staffDiterimaQuery = query(calonStaffRef, or(where("status", "array-contains", "Diterima")), orderBy("name", "asc"));
+
+    const querySnapshot = await getDocs(staffDiterimaQuery);
+    const calonStaffRes = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    return calonStaffRes;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function getAllCalonStaff() {
   try {
     const calonStaffRef = collection(db, "calonStaff");
@@ -64,9 +80,11 @@ async function getCalonStaffAkademik() {
       id: doc.id,
       ...doc.data(),
     }));
+
     return calonStaffRes;
   } catch (error) {
     console.log(error);
+    return [];
   }
 }
 
