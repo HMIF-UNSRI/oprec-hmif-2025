@@ -120,6 +120,7 @@ export default function PendaftaranForm() {
         reasonDivision2,
         reasonHMIF,
         whatsappNumber,
+        status: "Belum Diterima",
       });
       router.push("/daftar/sukses");
     } catch (error) {
@@ -188,8 +189,8 @@ export default function PendaftaranForm() {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="2022">2022</SelectItem>
                       <SelectItem value="2023">2023</SelectItem>
+                      <SelectItem value="2024">2024</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
