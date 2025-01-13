@@ -28,7 +28,7 @@ const Hero = () => {
         alt="Light"
         width={100}
         height={100}
-        className="hidden lg:flex absolute top-[-500px] lg:top-[-1000px] w-full z-[1]"
+        className="hidden lg:flex absolute top-[-500px] lg:top-[-750px] h-[150%] w-[150%] z-[1] opacity-70"
       />
       <HeroContent />
     </div>
