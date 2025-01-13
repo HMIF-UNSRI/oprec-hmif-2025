@@ -62,7 +62,7 @@ const HeroContent = () => {
             <motion.a
               href="/daftar"
               variants={slideInFromLeft(1)}
-              className="py-2 px-4 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+              className="py-2 px-4 button-primary text-center text-sm lg:text-lg text-white cursor-pointer rounded-lg max-w-[200px]"
             >
               <Link href="/daftar">Daftar Sekarang!</Link>
             </motion.a>
@@ -71,7 +71,7 @@ const HeroContent = () => {
           <motion.a
             href="https://bit.ly/bgoprechmifunsri2024"
             variants={slideInFromLeft(1)}
-            className="py-2 px-4 button-primary-dinas text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+            className="py-2 px-4 button-primary-dinas text-center text-sm lg:text-lg text-white cursor-pointer rounded-lg max-w-[200px]"
           >
             Guidebook
           </motion.a>

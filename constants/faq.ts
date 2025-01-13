@@ -1,8 +1,8 @@
 export const faq = [
   {
-    question: "Siapa saja yang boleh mendaftar menjadi staff HMIF 2024?",
+    question: "Siapa saja yang boleh mendaftar menjadi staff HMIF 2025?",
     answer:
-      "Seluruh Mahasiswa aktif Teknik Informatika UNSRI angkatan 2022 dan 2023.",
+      "Seluruh Mahasiswa aktif Teknik Informatika UNSRI angkatan 2023 dan 2024.",
   },
   {
     question: "Bagaimana cara mendaftar untuk bergabung dengan HMIF?",
