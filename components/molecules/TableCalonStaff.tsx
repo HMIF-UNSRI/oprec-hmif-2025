@@ -1,12 +1,5 @@
 "use client";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
@@ -20,7 +13,7 @@ export default function TableCalonStaff() {
 
   useEffect(() => {
     const getCalonStaff = async () => {
-      console.log(dinasName);
+      // console.log(dinasName);
       if (dinasName) {
         const response = await fetchCalonStaff(dinasName);
         setCalonStaff(response);
@@ -28,6 +21,9 @@ export default function TableCalonStaff() {
     };
     getCalonStaff();
   }, [dinasName]);
+
+  const isAccepted = dinasName === "diterima";
+
   return (
     <Table className="mx-auto my-5">
       <TableHeader>
@@ -41,23 +37,28 @@ export default function TableCalonStaff() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {calonStaff.map((staff: CalonStaff, index: number) => (
-          <TableRow key={staff.id}>
-            <TableCell className="font-medium">{index + 1}</TableCell>
-            <TableCell className="font-medium">{staff.name}</TableCell>
-            <TableCell colSpan={10}>{staff.nim}</TableCell>
-            <TableCell colSpan={14}>{staff.divisions[0]}</TableCell>
-            <TableCell colSpan={14}>{staff.divisions[1]}</TableCell>
-            <TableCell colSpan={14} className="">
-              <Link
-                  href={`/dashboard/${dinasName}/${staff.id}`}
-                  className="px-5 py-1 rounded-lg cursor-pointer bg-emerald-600"
-              >
-                Detail
-              </Link>
+        {calonStaff && calonStaff.length > 0 ? (
+          calonStaff.map((staff: CalonStaff, index: number) => (
+            <TableRow key={staff.id}>
+              <TableCell className="font-medium">{index + 1}</TableCell>
+              <TableCell className="font-medium">{staff.name}</TableCell>
+              <TableCell colSpan={10}>{staff.nim}</TableCell>
+              <TableCell colSpan={14}>{staff.divisions[0]}</TableCell>
+              <TableCell colSpan={14}>{staff.divisions[1]}</TableCell>
+              <TableCell colSpan={14} className="">
+                <Link href={`/dashboard/${dinasName}/${staff.id}`} className="px-5 py-1 rounded-lg cursor-pointer bg-emerald-600">
+                  Detail
+                </Link>
+              </TableCell>
+            </TableRow>
+          ))
+        ) : (
+          <TableRow>
+            <TableCell colSpan={100} className="text-center font-medium">
+              {isAccepted ? "Belum ada staf yang diterima." : `Belum ada staf yang mendaftar di dinas ${dinasName}.`}
             </TableCell>
           </TableRow>
-        ))}
+        )}
       </TableBody>
     </Table>
   );

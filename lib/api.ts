@@ -25,22 +25,31 @@ export async function fetchCalonStaff(dinasName?: string) {
   if (dinasName === "psdm") {
     return getCalonStaffPSDM();
   }
+  if (dinasName === "diterima") {
+    return getStaffDiterima();
+  }
+
   return getAllCalonStaff();
 }
 
-export async function fetchStaffDiterima() {
+async function getStaffDiterima() {
   try {
     const calonStaffRef = collection(db, "calonStaff");
-    const staffDiterimaQuery = query(calonStaffRef, or(where("status", "array-contains", "Diterima")), orderBy("name", "asc"));
 
+    const staffDiterimaQuery = query(calonStaffRef, where("status", "==", "Diterima"), orderBy("name", "asc"));
+
+    console.log("Query dibuat, memuat data...");
     const querySnapshot = await getDocs(staffDiterimaQuery);
+
     const calonStaffRes = querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
+
+    console.log("Data diterima:", calonStaffRes);
     return calonStaffRes;
   } catch (error) {
-    console.log(error);
+    console.error("Error saat mendapatkan staff diterima:", error);
   }
 }
 

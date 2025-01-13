@@ -1,6 +1,6 @@
 "use client";
 import DinasCard from "@/components/atoms/DinasCard";
-import { fetchCalonStaff, fetchStaffDiterima } from "@/lib/api";
+import { fetchCalonStaff } from "@/lib/api";
 import { auth } from "@/lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
@@ -44,7 +44,7 @@ export default function Dashboard() {
         fetchCalonStaff("kominfo"),
         fetchCalonStaff("pmb"),
         fetchCalonStaff("psdm"),
-        fetchStaffDiterima(),
+        fetchCalonStaff("diterima"),
       ]);
 
       console.log("Fetched data:", calonStaff);
@@ -67,7 +67,7 @@ export default function Dashboard() {
   return (
     <div className="flex flex-wrap justify-center gap-x-6 gap-y-6 px-14">
       <DinasCard href="/dashboard/pendaftar" title="Pendaftar Total" registrant={calonStaffLength.global} iconBgColor="bg-sky-500" />
-      <DinasCard href="/dashboard/pendaftar-diterima" title="Pendaftar Diterima" registrant={calonStaffLength.accept} iconBgColor="bg-amber-500" />
+      <DinasCard href="/dashboard/diterima" title="Pendaftar Diterima" registrant={calonStaffLength.accept} iconBgColor="bg-amber-500" />
       <DinasCard href="/dashboard/administrasi" title="Administrasi" registrant={calonStaffLength.administrasi} iconBgColor="bg-lime-500" />
       <DinasCard href="/dashboard/akademik" title="Akademik Gacor" registrant={calonStaffLength.akademik} iconBgColor="bg-emerald-500" />
       <DinasCard href="/dashboard/kastrad" title="Kastrad" registrant={calonStaffLength.kastrad} iconBgColor="bg-cyan-500" />

@@ -9,7 +9,7 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "@/lib/firebase";
 import { db } from "@/lib/firebase";
 import { Button } from "../ui/button";
-import {store} from "next/dist/build/output/store";
+import { store } from "next/dist/build/output/store";
 
 export default function TableDetail() {
   const [kpmUrl, setKpmUrl] = useState("");
@@ -32,6 +32,12 @@ export default function TableDetail() {
       if (calonStaffId) {
         const response = await getCalonStaffById(calonStaffId);
         setCalonStaff(response);
+
+        if (response?.status === "Diterima") {
+          setAccepted(true);
+        } else {
+          setAccepted(false);
+        }
       }
     };
     getCalonStaff();
@@ -59,7 +65,6 @@ export default function TableDetail() {
       const newStatus = !accepted ? "Diterima" : "Belum Diterima";
       setAccepted(!accepted);
 
-      // Update Firestore
       const docRef = doc(db, "calonStaff", calonStaffId);
       await updateDoc(docRef, { status: newStatus });
 
@@ -195,10 +200,7 @@ export default function TableDetail() {
           <TableCell></TableCell>
           <TableCell></TableCell>
           <TableCell colSpan={10} className="text-right pt-4">
-            <Button
-                onClick={handleAccept}
-                className={`rounded-lg cursor-pointer text-lg ${accepted ? "bg-red-600" : "bg-emerald-600"}`}
-            >
+            <Button onClick={handleAccept} className={`rounded-lg cursor-pointer text-lg ${accepted ? "bg-red-600" : "bg-emerald-600"}`}>
               {accepted ? "Hapus" : "Terima"}
             </Button>
           </TableCell>
