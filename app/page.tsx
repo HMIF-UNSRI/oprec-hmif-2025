@@ -6,6 +6,7 @@ import Image from "next/image";
 import Faq from "@/components/organisms/Faq";
 import Footer from "@/components/organisms/Footer";
 import Navbar from "@/components/organisms/Navbar";
+import Dinas from "@/components/organisms/Dinas";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           <Timeline />
           <Faq />
           <Encryption />
+          <Dinas />
           <Projects />
         </div>
       </main>
