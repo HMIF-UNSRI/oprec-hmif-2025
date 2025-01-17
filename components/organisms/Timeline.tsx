@@ -27,10 +27,10 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"15/01/2025"}
+            date={"20/01/2025"}
             title={"Pembukaan Pendaftaran"}
             description={
-              "Pendaftaran dibuka pada tanggal sampai 15 - 20 Januari 2025 pukul 23:59 WIB"
+              "Pendaftaran dibuka pada tanggal sampai 20 - 26 Januari 2025 pukul 23:59 WIB"
             }
           />
         </div>
@@ -38,7 +38,7 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"25/01/2025"}
+            date={"01/02/2025"}
             title={"Wawancara"}
             description={
               "Sesi wawancara dilakukan semi-offline dan terdiri dari 2 tahap, yaitu wawancara inti dan wawancara dinas"
@@ -49,7 +49,7 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"26/01/2024"}
+            date={"02/02/2025"}
             title={"LGD"}
             description={
               "Leaderless Group Discussion dilakukan secara daring melalui media aplikasi Zoom"
@@ -60,7 +60,7 @@ const Timeline = () => {
         <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
           <ChecklistTimeline />
           <TimelineCard
-            date={"02/02/2024"}
+            date={"04/02/2025"}
             title={"Pengumuman"}
             description={
               "Pengumuman disampaikan melalui grup whatsapp global oprec, dan akan dikirim ke email masing masing"

@@ -12,18 +12,18 @@ const Projects = () => {
       </h1>
       <div className="grid flex-col w-full h-full gap-10 px-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
         <ProjectCard
-          src="/srifoton.jpg"
+          src="/srifoton.JPG"
           title="SRIFOTON"
           description="Wadah bagi mahasiswa seluruh Indonesia untuk menuangkan kreativitas dan kemampuan dalam menggunakan dan mengembangkan teknologi yang ada dalam bentuk seminar dan berbagai macam perlombaan."
         />
         <ProjectCard
-          src="/ifcup.jpg"
+          src="/ifcup.jpeg"
           title="IF CUP"
           description="Hadir dalam rangka mendukung mahasiswa Teknik Informatika Universitas Sriwijaya untuk  mengembangkan dan mengasah bakat serta potensi yang mereka miliki pada bidang olahraga.
 "
         />
         <ProjectCard
-          src="/pelatihan-pemrograman.jpg"
+          src="/pelatihan-pemrograman.png"
           title="Pelatihan Pemrograman Mahasiswa"
           description="Kegiatan internal Teknik Informatika Universitas Sriwijaya sebagai wadah bagi mahasiswa Teknik Informatika meningkatkan kemampuan dasar mereka di bidang pemrograman. Dalam pelatihan ini, peserta akan dibimbing langsung oleh mentor berpengalaman dengan kurikulum yang sesuai dengan perkuliahan.
 ."
